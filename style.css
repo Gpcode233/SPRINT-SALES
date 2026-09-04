@@ -1,0 +1,85 @@
+/* Sprint Laundry & Boutique - Modern Engaging Stylesheet */
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0.25;
+  }
+  50% {
+    transform: scale(1.1) translate(15px, -15px);
+    opacity: 0.35;
+  }
+}
+
+.glow-orb {
+  position: absolute;
+  filter: blur(120px);
+  animation: pulseGlow 12s ease-in-out infinite alternate;
+}
+
+/* Gradient Button */
+.btn-gradient {
+  background: linear-gradient(135deg, #FF5733 0%, #E03E8F 50%, #00BFA5 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  background-position: right center;
+  box-shadow: 0 10px 25px -5px rgba(224, 62, 143, 0.4), 0 8px 10px -6px rgba(255, 87, 51, 0.4);
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Category Cards */
+.category-card {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* Size Radio Selector Styling */
+.size-pill input:checked + span {
+  border-color: #FF5733 !important;
+  background-color: rgba(255, 87, 51, 0.18) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 0 12px rgba(255, 87, 51, 0.3);
+}
+
+/* Fulfillment Radio Cards */
+.fulfillment-card {
+  transition: all 0.2s ease;
+}
+
+.fulfillment-card:has(input:checked) {
+  border-color: #00BFA5;
+  background-color: rgba(0, 191, 165, 0.08);
+}
+
+.fulfillment-card:has(input[value="Delivery"]:checked) {
+  border-color: #FF5733;
+  background-color: rgba(255, 87, 51, 0.08);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #090D16;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
