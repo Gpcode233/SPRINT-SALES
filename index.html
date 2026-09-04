@@ -3,35 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sprint Laundry & Boutique | Exclusive Clothing Sale</title>
-  <meta name="description" content="Discover premium boutique fashion items on sale at Sprint Laundry & Boutique. Easy online ordering with store pickup or fast delivery." />
+  <title>Sprint Laundry & Boutique | Clothing Sale</title>
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            display: ['"Syne"', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
           },
           colors: {
             brand: {
-              orange: '#FF5733',
-              coral: '#FF6F59',
-              pink: '#E03E8F',
-              magenta: '#C81E73',
-              teal: '#00BFA5',
-              cyan: '#00C9A7',
-              dark: '#0F172A',
-              card: '#1E293B',
-              surface: '#F8FAFC',
+              orange: '#F97316',
+              'orange-dark': '#EA580C',
+              'orange-light': '#FFF7ED',
             }
           }
         }
@@ -39,698 +31,189 @@
     }
   </script>
 
-  <!-- Tabler Icons Webfont CDN -->
+  <!-- Tabler Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
 
-  <!-- Custom Stylesheet -->
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-pink selection:text-white min-h-screen flex flex-col relative overflow-x-hidden">
+<body class="bg-white text-gray-900 font-sans antialiased min-h-screen flex flex-col justify-between">
 
-  <!-- Ambient Gradient Background Glows -->
-  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-    <div class="glow-orb top-[-10%] left-[-10%] w-[500px] h-[500px] bg-brand-pink/20 rounded-full blur-[140px]"></div>
-    <div class="glow-orb top-[30%] right-[-10%] w-[550px] h-[550px] bg-brand-orange/20 rounded-full blur-[160px]"></div>
-    <div class="glow-orb bottom-[-10%] left-[20%] w-[600px] h-[600px] bg-brand-teal/20 rounded-full blur-[150px]"></div>
-  </div>
-
-  <!-- Header / Navigation -->
-  <header class="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/80 border-b border-slate-800/80 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+  <!-- Minimal Header -->
+  <header class="border-b border-gray-100 bg-white sticky top-0 z-30">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       
-      <!-- Brand Logo & Name -->
-      <a href="#hero" class="flex items-center gap-3 group">
-        <div class="relative w-12 h-12 rounded-xl overflow-hidden shadow-lg shadow-brand-orange/20 ring-2 ring-brand-coral/40 group-hover:scale-105 transition duration-300">
-          <img src="assets/logo.jpg" alt="Sprint Laundry & Boutique Logo" class="w-full h-full object-cover" />
-        </div>
+      <!-- Brand -->
+      <a href="#hero" class="flex items-center gap-3">
+        <img src="assets/logo.jpg" alt="Sprint Boutique Logo" class="w-10 h-10 rounded-lg object-cover border border-gray-200" />
         <div>
-          <div class="flex items-center gap-2">
-            <span class="font-display font-extrabold text-xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-brand-pink via-brand-orange to-brand-teal">
-              SPRINT
-            </span>
-            <span class="text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 rounded-full bg-brand-pink/20 text-brand-pink border border-brand-pink/30">
-              SALE ON
-            </span>
-          </div>
-          <p class="text-xs text-slate-400 font-medium tracking-wide">LAUNDRY & BOUTIQUE</p>
+          <span class="font-bold text-base tracking-tight text-gray-900 block leading-tight">SPRINT</span>
+          <span class="text-[11px] text-gray-500 font-medium tracking-wide">LAUNDRY & BOUTIQUE</span>
         </div>
       </a>
 
-      <!-- Quick Nav Buttons -->
-      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
-        <a href="#sale-items" class="text-slate-300 hover:text-white transition flex items-center gap-1.5 hover:translate-y-[-1px]">
-          <i class="ti ti-tags text-brand-orange"></i> Sale Items
-        </a>
-        <a href="#order-section" class="text-slate-300 hover:text-white transition flex items-center gap-1.5 hover:translate-y-[-1px]">
-          <i class="ti ti-shopping-bag text-brand-teal"></i> Place Order
-        </a>
-        <a href="#contact" class="text-slate-300 hover:text-white transition flex items-center gap-1.5 hover:translate-y-[-1px]">
-          <i class="ti ti-brand-instagram text-brand-pink"></i> Connect
-        </a>
-      </nav>
+      <!-- Direct Action -->
+      <a href="#order" class="bg-brand-orange hover:bg-brand-orange-dark text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5">
+        <i class="ti ti-shopping-bag text-base"></i>
+        <span>Place Order</span>
+      </a>
 
-      <!-- Action Button -->
-      <div class="flex items-center gap-3">
-        <a href="#order-section" class="btn-gradient px-5 py-2.5 rounded-xl font-bold text-sm text-white shadow-lg flex items-center gap-2 group hover:shadow-brand-orange/30 transition transform hover:-translate-y-0.5">
-          <span>Order Now</span>
-          <i class="ti ti-arrow-narrow-right text-lg group-hover:translate-x-1 transition duration-200"></i>
-        </a>
-      </div>
     </div>
   </header>
 
   <!-- Main Content -->
-  <main class="relative z-10 flex-grow">
+  <main class="flex-grow">
 
     <!-- HERO SECTION -->
-    <section id="hero" class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          <!-- Left Hero Column -->
-          <div class="lg:col-span-7 space-y-7 text-center lg:text-left">
-            
-            <!-- Announcement Pill -->
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-brand-pink/15 via-brand-orange/15 to-brand-teal/15 border border-slate-700/80 text-xs sm:text-sm font-semibold shadow-inner">
-              <span class="flex h-2.5 w-2.5 relative">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-coral opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-coral"></span>
-              </span>
-              <span class="text-slate-200">Exclusive Boutique Clothing Sale is Live!</span>
-              <i class="ti ti-sparkles text-brand-orange"></i>
-            </div>
-
-            <!-- Main Headline -->
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight text-white leading-[1.15]">
-              Upgrade Your Wardrobe with
-              <span class="block text-transparent bg-clip-text bg-gradient-to-r from-brand-coral via-brand-pink to-brand-teal">
-                Sprint Boutique Styles
-              </span>
-            </h1>
-
-            <!-- Subtitle -->
-            <p class="text-base sm:text-lg text-slate-300 font-normal max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Discover trendy clothing pieces crafted for comfort and elegance. Choose your favorite items, select your delivery or in-store pickup preference, and lock in your discount today.
-            </p>
-
-            <!-- Feature Pills -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 max-w-xl mx-auto lg:mx-0 text-left">
-              <div class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/90 border border-slate-800">
-                <div class="w-8 h-8 rounded-lg bg-brand-pink/20 text-brand-pink flex items-center justify-center shrink-0">
-                  <i class="ti ti-hanger text-lg"></i>
-                </div>
-                <div>
-                  <h4 class="text-xs font-bold text-white">Trendy Outfits</h4>
-                  <p class="text-[11px] text-slate-400">Handpicked Quality</p>
-                </div>
-              </div>
-
-              <div class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/90 border border-slate-800">
-                <div class="w-8 h-8 rounded-lg bg-brand-orange/20 text-brand-orange flex items-center justify-center shrink-0">
-                  <i class="ti ti-building-store text-lg"></i>
-                </div>
-                <div>
-                  <h4 class="text-xs font-bold text-white">Store Pickup</h4>
-                  <p class="text-[11px] text-slate-400">Fast & Free</p>
-                </div>
-              </div>
-
-              <div class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/90 border border-slate-800 col-span-2 sm:col-span-1">
-                <div class="w-8 h-8 rounded-lg bg-brand-teal/20 text-brand-teal flex items-center justify-center shrink-0">
-                  <i class="ti ti-truck-delivery text-lg"></i>
-                </div>
-                <div>
-                  <h4 class="text-xs font-bold text-white">Doorstep Delivery</h4>
-                  <p class="text-[11px] text-slate-400">Location-based</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- CTA Group -->
-            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-              <a href="#order-section" class="w-full sm:w-auto px-8 py-4 rounded-2xl btn-gradient font-bold text-base text-white shadow-xl shadow-brand-orange/25 flex items-center justify-center gap-3 group hover:scale-[1.02] transition">
-                <i class="ti ti-shopping-cart text-xl"></i>
-                <span>Place Your Order</span>
-                <i class="ti ti-arrow-right text-lg group-hover:translate-x-1.5 transition duration-200"></i>
-              </a>
-
-              <a href="#sale-items" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-semibold text-base flex items-center justify-center gap-2 transition hover:border-slate-500">
-                <i class="ti ti-grid-dots text-brand-teal"></i>
-                <span>Browse Categories</span>
-              </a>
-            </div>
-
-          </div>
-
-          <!-- Right Hero Banner Card -->
-          <div class="lg:col-span-5 relative">
-            <div class="relative mx-auto max-w-md lg:max-w-none">
-              
-              <!-- Glow outline -->
-              <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-brand-pink via-brand-orange to-brand-teal opacity-70 blur-lg group-hover:opacity-100 transition duration-1000"></div>
-
-              <!-- Main Card -->
-              <div class="relative rounded-3xl bg-slate-900/95 border border-slate-700/80 p-6 sm:p-8 overflow-hidden backdrop-blur-xl shadow-2xl">
-                
-                <!-- Logo Hero Display -->
-                <div class="flex items-center justify-between pb-6 border-b border-slate-800">
-                  <div class="flex items-center gap-3">
-                    <img src="assets/logo.jpg" alt="Sprint Boutique" class="w-14 h-14 rounded-2xl object-cover ring-2 ring-brand-coral/50 shadow-md" />
-                    <div>
-                      <h3 class="font-display font-bold text-lg text-white">Sprint Boutique</h3>
-                      <p class="text-xs text-brand-teal font-medium flex items-center gap-1">
-                        <i class="ti ti-circle-check-filled"></i> Official Sale Promo
-                      </p>
-                    </div>
-                  </div>
-                  <div class="text-right">
-                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Discount</span>
-                    <p class="text-xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-pink">SPECIAL SALE</p>
-                  </div>
-                </div>
-
-                <!-- Feature list in card -->
-                <div class="py-6 space-y-4">
-                  <div class="flex items-start gap-3.5">
-                    <div class="w-9 h-9 rounded-xl bg-brand-coral/15 text-brand-coral flex items-center justify-center shrink-0 mt-0.5">
-                      <i class="ti ti-shirt text-xl"></i>
-                    </div>
-                    <div>
-                      <h4 class="text-sm font-bold text-slate-100">Top Quality Apparel</h4>
-                      <p class="text-xs text-slate-400 leading-relaxed">Casuals, corporate fits, streetwear, dresses, sets, and boutique exclusives.</p>
-                    </div>
-                  </div>
-
-                  <div class="flex items-start gap-3.5">
-                    <div class="w-9 h-9 rounded-xl bg-brand-teal/15 text-brand-teal flex items-center justify-center shrink-0 mt-0.5">
-                      <i class="ti ti-truck-delivery text-xl"></i>
-                    </div>
-                    <div>
-                      <h4 class="text-sm font-bold text-slate-100">Pickup or Home Delivery</h4>
-                      <p class="text-xs text-slate-400 leading-relaxed">Pickup in-store or get it delivered straight to your door step.</p>
-                    </div>
-                  </div>
-
-                  <div class="flex items-start gap-3.5">
-                    <div class="w-9 h-9 rounded-xl bg-brand-pink/15 text-brand-pink flex items-center justify-center shrink-0 mt-0.5">
-                      <i class="ti ti-headset text-xl"></i>
-                    </div>
-                    <div>
-                      <h4 class="text-sm font-bold text-slate-100">Instant Order Confirmation</h4>
-                      <p class="text-xs text-slate-400 leading-relaxed">Direct WhatsApp order summary & fast support after submission.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Quick Button in card -->
-                <a href="#order-section" class="w-full block py-3.5 rounded-xl bg-gradient-to-r from-brand-orange to-brand-pink hover:opacity-95 text-center text-white font-bold text-sm tracking-wide shadow-lg shadow-brand-pink/20 transition">
-                  Order In 60 Seconds <i class="ti ti-bolt ml-1"></i>
-                </a>
-
-              </div>
-            </div>
-          </div>
-
-        </div>
-
+    <section id="hero" class="py-16 md:py-24 max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-orange-light text-brand-orange text-xs font-semibold mb-6 border border-orange-200">
+        <i class="ti ti-tag"></i> Special Clothing Sale Now Live
       </div>
-    </section>
 
-    <!-- SALE CATEGORIES PREVIEW SECTION -->
-    <section id="sale-items" class="py-16 bg-slate-900/60 border-y border-slate-800/80 relative">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center max-w-3xl mx-auto mb-12">
-          <div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-brand-teal/10 border border-brand-teal/30 text-brand-teal text-xs font-bold uppercase tracking-wider mb-3">
-            <i class="ti ti-category"></i> Explore Our Sale Items
-          </div>
-          <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white">
-            What Are You Shopping For Today?
-          </h2>
-          <p class="text-slate-400 text-sm sm:text-base mt-2">
-            Click on any clothing item below to quickly prefill your order form!
-          </p>
-        </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight mb-6">
+        Sprint Boutique <br class="hidden sm:inline" />
+        <span class="text-brand-orange">Clothing Sale</span>
+      </h1>
 
-        <!-- Category Grid -->
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-          
-          <!-- Category 1 -->
-          <div class="category-card group bg-slate-950/80 hover:bg-slate-800/90 border border-slate-800 hover:border-brand-orange/60 rounded-2xl p-5 transition-all duration-300 cursor-pointer flex flex-col justify-between"
-               onclick="selectCategory('T-Shirts & Polos')">
-            <div class="flex items-center justify-between mb-4">
-              <div class="w-12 h-12 rounded-xl bg-brand-orange/15 text-brand-orange flex items-center justify-center text-2xl group-hover:scale-110 transition duration-300">
-                <i class="ti ti-shirt"></i>
-              </div>
-              <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-brand-orange/10 text-brand-orange border border-brand-orange/20">
-                HOT SALE
-              </span>
-            </div>
-            <div>
-              <h3 class="font-bold text-white text-base group-hover:text-brand-orange transition">T-Shirts & Polos</h3>
-              <p class="text-xs text-slate-400 mt-1">Graphic tees, plain cotton, designer polo shirts</p>
-            </div>
-            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-brand-orange">
-              <span>Select this item</span>
-              <i class="ti ti-plus group-hover:translate-x-1 transition"></i>
-            </div>
-          </div>
+      <p class="text-base sm:text-lg text-gray-600 max-w-xl mx-auto mb-8 leading-relaxed">
+        We are running a special sale on our premium boutique clothing items. Order online easily for store pickup or delivery right to your location.
+      </p>
 
-          <!-- Category 2 -->
-          <div class="category-card group bg-slate-950/80 hover:bg-slate-800/90 border border-slate-800 hover:border-brand-pink/60 rounded-2xl p-5 transition-all duration-300 cursor-pointer flex flex-col justify-between"
-               onclick="selectCategory('Hoodies & Sweatshirts')">
-            <div class="flex items-center justify-between mb-4">
-              <div class="w-12 h-12 rounded-xl bg-brand-pink/15 text-brand-pink flex items-center justify-center text-2xl group-hover:scale-110 transition duration-300">
-                <i class="ti ti-jacket"></i>
-              </div>
-              <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-brand-pink/10 text-brand-pink border border-brand-pink/20">
-                TRENDING
-              </span>
-            </div>
-            <div>
-              <h3 class="font-bold text-white text-base group-hover:text-brand-pink transition">Hoodies & Sweats</h3>
-              <p class="text-xs text-slate-400 mt-1">Cozy fleece hoodies, oversized & zip-ups</p>
-            </div>
-            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-brand-pink">
-              <span>Select this item</span>
-              <i class="ti ti-plus group-hover:translate-x-1 transition"></i>
-            </div>
-          </div>
-
-          <!-- Category 3 -->
-          <div class="category-card group bg-slate-950/80 hover:bg-slate-800/90 border border-slate-800 hover:border-brand-teal/60 rounded-2xl p-5 transition-all duration-300 cursor-pointer flex flex-col justify-between"
-               onclick="selectCategory('Shirts & Vintage Fits')">
-            <div class="flex items-center justify-between mb-4">
-              <div class="w-12 h-12 rounded-xl bg-brand-teal/15 text-brand-teal flex items-center justify-center text-2xl group-hover:scale-110 transition duration-300">
-                <i class="ti ti-tie"></i>
-              </div>
-              <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-brand-teal/10 text-brand-teal border border-brand-teal/20">
-                POPULAR
-              </span>
-            </div>
-            <div>
-              <h3 class="font-bold text-white text-base group-hover:text-brand-teal transition">Shirts & Vintage</h3>
-              <p class="text-xs text-slate-400 mt-1">Casual button-downs, silk fits, and vintage prints</p>
-            </div>
-            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-brand-teal">
-              <span>Select this item</span>
-              <i class="ti ti-plus group-hover:translate-x-1 transition"></i>
-            </div>
-          </div>
-
-          <!-- Category 4 -->
-          <div class="category-card group bg-slate-950/80 hover:bg-slate-800/90 border border-slate-800 hover:border-amber-400/60 rounded-2xl p-5 transition-all duration-300 cursor-pointer flex flex-col justify-between"
-               onclick="selectCategory('Trousers & Jeans')">
-            <div class="flex items-center justify-between mb-4">
-              <div class="w-12 h-12 rounded-xl bg-amber-400/15 text-amber-400 flex items-center justify-center text-2xl group-hover:scale-110 transition duration-300">
-                <i class="ti ti-shoe"></i>
-              </div>
-              <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-amber-400/10 text-amber-400 border border-amber-400/20">
-                MUST HAVE
-              </span>
-            </div>
-            <div>
-              <h3 class="font-bold text-white text-base group-hover:text-amber-400 transition">Trousers & Jeans</h3>
-              <p class="text-xs text-slate-400 mt-1">Cargo pants, tailored trousers & premium denim</p>
-            </div>
-            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-amber-400">
-              <span>Select this item</span>
-              <i class="ti ti-plus group-hover:translate-x-1 transition"></i>
-            </div>
-          </div>
-
-          <!-- Category 5 -->
-          <div class="category-card group bg-slate-950/80 hover:bg-slate-800/90 border border-slate-800 hover:border-brand-pink/60 rounded-2xl p-5 transition-all duration-300 cursor-pointer flex flex-col justify-between"
-               onclick="selectCategory('Dresses & Gowns')">
-            <div class="flex items-center justify-between mb-4">
-              <div class="w-12 h-12 rounded-xl bg-pink-500/15 text-pink-400 flex items-center justify-center text-2xl group-hover:scale-110 transition duration-300">
-                <i class="ti ti-sparkles"></i>
-              </div>
-              <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-pink-500/10 text-pink-400 border border-pink-500/20">
-                ELEGANT
-              </span>
-            </div>
-            <div>
-              <h3 class="font-bold text-white text-base group-hover:text-pink-400 transition">Dresses & Gowns</h3>
-              <p class="text-xs text-slate-400 mt-1">Cocktail dresses, casual sundresses, chic evening wear</p>
-            </div>
-            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-pink-400">
-              <span>Select this item</span>
-              <i class="ti ti-plus group-hover:translate-x-1 transition"></i>
-            </div>
-          </div>
-
-          <!-- Category 6 -->
-          <div class="category-card group bg-slate-950/80 hover:bg-slate-800/90 border border-slate-800 hover:border-cyan-400/60 rounded-2xl p-5 transition-all duration-300 cursor-pointer flex flex-col justify-between"
-               onclick="selectCategory('Two-Piece Co-ords & Sets')">
-            <div class="flex items-center justify-between mb-4">
-              <div class="w-12 h-12 rounded-xl bg-cyan-400/15 text-cyan-400 flex items-center justify-center text-2xl group-hover:scale-110 transition duration-300">
-                <i class="ti ti-layers-intersect"></i>
-              </div>
-              <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-cyan-400/10 text-cyan-400 border border-cyan-400/20">
-                CO-ORDS
-              </span>
-            </div>
-            <div>
-              <h3 class="font-bold text-white text-base group-hover:text-cyan-400 transition">Two-Piece Sets</h3>
-              <p class="text-xs text-slate-400 mt-1">Matching top & short/pant lounge and party sets</p>
-            </div>
-            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-cyan-400">
-              <span>Select this item</span>
-              <i class="ti ti-plus group-hover:translate-x-1 transition"></i>
-            </div>
-          </div>
-
-          <!-- Category 7 -->
-          <div class="category-card group bg-slate-950/80 hover:bg-slate-800/90 border border-slate-800 hover:border-purple-400/60 rounded-2xl p-5 transition-all duration-300 cursor-pointer flex flex-col justify-between"
-               onclick="selectCategory('Jackets & Outerwear')">
-            <div class="flex items-center justify-between mb-4">
-              <div class="w-12 h-12 rounded-xl bg-purple-400/15 text-purple-400 flex items-center justify-center text-2xl group-hover:scale-110 transition duration-300">
-                <i class="ti ti-umbrella"></i>
-              </div>
-              <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-purple-400/10 text-purple-400 border border-purple-400/20">
-                OUTERWEAR
-              </span>
-            </div>
-            <div>
-              <h3 class="font-bold text-white text-base group-hover:text-purple-400 transition">Jackets & Coats</h3>
-              <p class="text-xs text-slate-400 mt-1">Denim jackets, bombers, windbreakers, blazers</p>
-            </div>
-            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-purple-400">
-              <span>Select this item</span>
-              <i class="ti ti-plus group-hover:translate-x-1 transition"></i>
-            </div>
-          </div>
-
-          <!-- Category 8 -->
-          <div class="category-card group bg-slate-950/80 hover:bg-slate-800/90 border border-slate-800 hover:border-brand-orange/60 rounded-2xl p-5 transition-all duration-300 cursor-pointer flex flex-col justify-between"
-               onclick="selectCategory('Custom / Other Request')">
-            <div class="flex items-center justify-between mb-4">
-              <div class="w-12 h-12 rounded-xl bg-slate-700/50 text-slate-300 flex items-center justify-center text-2xl group-hover:scale-110 transition duration-300">
-                <i class="ti ti-dots"></i>
-              </div>
-              <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
-                CUSTOM
-              </span>
-            </div>
-            <div>
-              <h3 class="font-bold text-white text-base group-hover:text-brand-orange transition">Custom Clothing</h3>
-              <p class="text-xs text-slate-400 mt-1">Describe any specific item or design you desire</p>
-            </div>
-            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-brand-orange">
-              <span>Specify in form</span>
-              <i class="ti ti-arrow-down-right group-hover:translate-x-1 transition"></i>
-            </div>
-          </div>
-
-        </div>
-
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="#order" class="w-full sm:w-auto bg-brand-orange hover:bg-brand-orange-dark text-white font-bold px-8 py-3.5 rounded-lg text-base transition flex items-center justify-center gap-2 shadow-sm">
+          <span>Place Your Order</span>
+          <i class="ti ti-arrow-down text-lg"></i>
+        </a>
       </div>
     </section>
 
     <!-- ORDER FORM SECTION -->
-    <section id="order-section" class="py-20 relative">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="order" class="py-12 bg-gray-50 border-t border-gray-200">
+      <div class="max-w-2xl mx-auto px-4 sm:px-6">
         
-        <!-- Header -->
-        <div class="text-center mb-10 space-y-3">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-orange/15 border border-brand-orange/30 text-brand-orange text-xs font-bold uppercase tracking-wider">
-            <i class="ti ti-clipboard-list text-base"></i> Place Your Sale Order
-          </div>
-          <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white">
-            Sprint Boutique Order Form
-          </h2>
-          <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
-            Fill out your details below to place your order. We'll receive your request instantly and follow up with confirmation.
-          </p>
+        <div class="text-center mb-8">
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Order Form</h2>
+          <p class="text-sm text-gray-500 mt-1">Please fill in your order details below</p>
         </div>
 
-        <!-- Form Card Container -->
-        <div class="relative">
+        <div class="bg-white border border-gray-200 rounded-xl p-6 sm:p-8 shadow-sm">
           
-          <!-- Outer gradient border glow -->
-          <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-brand-orange via-brand-pink to-brand-teal opacity-40 blur-xl"></div>
-
-          <!-- Main Card -->
-          <div class="relative bg-slate-900/95 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl backdrop-blur-xl">
+          <form id="orderForm" onsubmit="submitOrder(event)" class="space-y-6">
             
-            <form id="boutiqueOrderForm" class="space-y-8" onsubmit="handleFormSubmit(event)">
+            <!-- Full Name -->
+            <div>
+              <label for="name" class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1.5">
+                Full Name <span class="text-brand-orange">*</span>
+              </label>
+              <div class="relative">
+                <i class="ti ti-user absolute left-3 top-3 text-gray-400 text-lg"></i>
+                <input type="text" id="name" name="name" required placeholder="Your full name"
+                  class="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange" />
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label for="email" class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1.5">
+                Email Address <span class="text-brand-orange">*</span>
+              </label>
+              <div class="relative">
+                <i class="ti ti-mail absolute left-3 top-3 text-gray-400 text-lg"></i>
+                <input type="email" id="email" name="email" required placeholder="your.email@example.com"
+                  class="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange" />
+              </div>
+            </div>
+
+            <!-- Phone Number -->
+            <div>
+              <label for="phone" class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1.5">
+                Phone Number <span class="text-brand-orange">*</span>
+              </label>
+              <div class="relative">
+                <i class="ti ti-phone absolute left-3 top-3 text-gray-400 text-lg"></i>
+                <input type="tel" id="phone" name="phone" required placeholder="e.g. 054XXXXXXX"
+                  class="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange" />
+              </div>
+            </div>
+
+            <!-- Type of Clothing Item & Quantity -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
               
-              <!-- STEP 1: Customer Info -->
-              <div class="space-y-4">
-                <div class="flex items-center gap-2 pb-2 border-b border-slate-800 text-slate-200">
-                  <div class="w-7 h-7 rounded-lg bg-brand-pink/20 text-brand-pink flex items-center justify-center font-bold text-xs">1</div>
-                  <h3 class="font-bold text-base text-white">Your Contact Details</h3>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <!-- Name Field -->
-                  <div class="space-y-1.5 sm:col-span-2">
-                    <label for="customerName" class="block text-xs font-semibold uppercase tracking-wider text-slate-300">
-                      Full Name <span class="text-brand-coral">*</span>
-                    </label>
-                    <div class="relative">
-                      <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
-                        <i class="ti ti-user text-lg"></i>
-                      </div>
-                      <input type="text" id="customerName" name="customerName" required placeholder="e.g. Alex Johnson"
-                        class="w-full pl-11 pr-4 py-3 bg-slate-950/90 border border-slate-700/80 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-coral focus:border-transparent transition text-sm" />
-                    </div>
-                  </div>
-
-                  <!-- Email Field -->
-                  <div class="space-y-1.5">
-                    <label for="customerEmail" class="block text-xs font-semibold uppercase tracking-wider text-slate-300">
-                      Email Address <span class="text-brand-coral">*</span>
-                    </label>
-                    <div class="relative">
-                      <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
-                        <i class="ti ti-mail text-lg"></i>
-                      </div>
-                      <input type="email" id="customerEmail" name="customerEmail" required placeholder="alex@example.com"
-                        class="w-full pl-11 pr-4 py-3 bg-slate-950/90 border border-slate-700/80 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-pink focus:border-transparent transition text-sm" />
-                    </div>
-                  </div>
-
-                  <!-- Phone Number Field -->
-                  <div class="space-y-1.5">
-                    <label for="customerPhone" class="block text-xs font-semibold uppercase tracking-wider text-slate-300">
-                      Phone / WhatsApp Number <span class="text-brand-coral">*</span>
-                    </label>
-                    <div class="relative">
-                      <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
-                        <i class="ti ti-phone text-lg"></i>
-                      </div>
-                      <input type="tel" id="customerPhone" name="customerPhone" required placeholder="+233 ... / +1 ..."
-                        class="w-full pl-11 pr-4 py-3 bg-slate-950/90 border border-slate-700/80 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent transition text-sm" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- STEP 2: Clothing Selection -->
-              <div class="space-y-4">
-                <div class="flex items-center gap-2 pb-2 border-b border-slate-800 text-slate-200">
-                  <div class="w-7 h-7 rounded-lg bg-brand-orange/20 text-brand-orange flex items-center justify-center font-bold text-xs">2</div>
-                  <h3 class="font-bold text-base text-white">Select Clothing Item & Quantity</h3>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-12 gap-4">
-                  
-                  <!-- Type of Clothing Item -->
-                  <div class="sm:col-span-8 space-y-1.5">
-                    <label for="clothingType" class="block text-xs font-semibold uppercase tracking-wider text-slate-300">
-                      Type of Clothing Item <span class="text-brand-coral">*</span>
-                    </label>
-                    <div class="relative">
-                      <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
-                        <i class="ti ti-hanger text-lg"></i>
-                      </div>
-                      <select id="clothingType" name="clothingType" required onchange="handleClothingTypeChange()"
-                        class="w-full pl-11 pr-10 py-3 bg-slate-950/90 border border-slate-700/80 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent transition text-sm appearance-none cursor-pointer">
-                        <option value="" disabled selected>-- Select clothing type --</option>
-                        <option value="T-Shirts & Polos">T-Shirts & Polos</option>
-                        <option value="Hoodies & Sweatshirts">Hoodies & Sweatshirts</option>
-                        <option value="Shirts & Vintage Fits">Shirts & Vintage Fits</option>
-                        <option value="Trousers & Jeans">Trousers & Jeans</option>
-                        <option value="Dresses & Gowns">Dresses & Gowns</option>
-                        <option value="Two-Piece Co-ords & Sets">Two-Piece Co-ords & Sets</option>
-                        <option value="Jackets & Outerwear">Jackets & Outerwear</option>
-                        <option value="Custom / Other Request">Other / Custom Clothing Item</option>
-                      </select>
-                      <div class="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-slate-400">
-                        <i class="ti ti-chevron-down text-base"></i>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Quantity Counter -->
-                  <div class="sm:col-span-4 space-y-1.5">
-                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300">
-                      Quantity <span class="text-brand-coral">*</span>
-                    </label>
-                    <div class="flex items-center bg-slate-950/90 border border-slate-700/80 rounded-xl p-1">
-                      <button type="button" onclick="adjustQuantity(-1)" class="w-10 h-9 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center transition">
-                        <i class="ti ti-minus text-sm"></i>
-                      </button>
-                      <input type="number" id="clothingQuantity" name="clothingQuantity" value="1" min="1" max="100" required
-                        class="w-full text-center bg-transparent text-white font-bold text-base focus:outline-none" />
-                      <button type="button" onclick="adjustQuantity(1)" class="w-10 h-9 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center transition">
-                        <i class="ti ti-plus text-sm"></i>
-                      </button>
-                    </div>
-                  </div>
-
-                  <!-- Optional Custom Item Specifics -->
-                  <div id="customItemContainer" class="sm:col-span-12 space-y-1.5 hidden">
-                    <label for="customItemDetails" class="block text-xs font-semibold uppercase tracking-wider text-brand-orange">
-                      Specify Item Name, Color, or Style Preferences:
-                    </label>
-                    <input type="text" id="customItemDetails" name="customItemDetails" placeholder="e.g. White linen vintage shirt, Black oversized hoodie"
-                      class="w-full px-4 py-3 bg-slate-950/90 border border-brand-orange/50 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-orange text-sm" />
-                  </div>
-
-                  <!-- Size Selection Pills -->
-                  <div class="sm:col-span-12 space-y-2">
-                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300">
-                      Preferred Size (Optional)
-                    </label>
-                    <div class="flex flex-wrap gap-2.5" id="sizeSelector">
-                      <label class="size-pill">
-                        <input type="radio" name="clothingSize" value="XS" class="sr-only" />
-                        <span class="px-3.5 py-1.5 rounded-lg border border-slate-700 bg-slate-950 text-xs font-bold text-slate-300 cursor-pointer hover:border-slate-500 transition">XS</span>
-                      </label>
-                      <label class="size-pill">
-                        <input type="radio" name="clothingSize" value="S" class="sr-only" />
-                        <span class="px-3.5 py-1.5 rounded-lg border border-slate-700 bg-slate-950 text-xs font-bold text-slate-300 cursor-pointer hover:border-slate-500 transition">S</span>
-                      </label>
-                      <label class="size-pill">
-                        <input type="radio" name="clothingSize" value="M" class="sr-only" checked />
-                        <span class="px-3.5 py-1.5 rounded-lg border border-brand-orange bg-brand-orange/20 text-xs font-bold text-white cursor-pointer transition">M</span>
-                      </label>
-                      <label class="size-pill">
-                        <input type="radio" name="clothingSize" value="L" class="sr-only" />
-                        <span class="px-3.5 py-1.5 rounded-lg border border-slate-700 bg-slate-950 text-xs font-bold text-slate-300 cursor-pointer hover:border-slate-500 transition">L</span>
-                      </label>
-                      <label class="size-pill">
-                        <input type="radio" name="clothingSize" value="XL" class="sr-only" />
-                        <span class="px-3.5 py-1.5 rounded-lg border border-slate-700 bg-slate-950 text-xs font-bold text-slate-300 cursor-pointer hover:border-slate-500 transition">XL</span>
-                      </label>
-                      <label class="size-pill">
-                        <input type="radio" name="clothingSize" value="XXL" class="sr-only" />
-                        <span class="px-3.5 py-1.5 rounded-lg border border-slate-700 bg-slate-950 text-xs font-bold text-slate-300 cursor-pointer hover:border-slate-500 transition">XXL</span>
-                      </label>
-                      <label class="size-pill">
-                        <input type="radio" name="clothingSize" value="Custom/Free Size" class="sr-only" />
-                        <span class="px-3.5 py-1.5 rounded-lg border border-slate-700 bg-slate-950 text-xs font-bold text-slate-300 cursor-pointer hover:border-slate-500 transition">Free Size / Custom</span>
-                      </label>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-              <!-- STEP 3: Pickup or Delivery Choice -->
-              <div class="space-y-4">
-                <div class="flex items-center gap-2 pb-2 border-b border-slate-800 text-slate-200">
-                  <div class="w-7 h-7 rounded-lg bg-brand-teal/20 text-brand-teal flex items-center justify-center font-bold text-xs">3</div>
-                  <h3 class="font-bold text-base text-white">Fulfillment Preference</h3>
-                </div>
-
-                <!-- Radio Choice Cards -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  
-                  <!-- Option: Pickup -->
-                  <label class="fulfillment-card relative flex items-start gap-3.5 p-4 rounded-2xl border-2 border-slate-700 bg-slate-950 cursor-pointer transition hover:border-brand-teal group">
-                    <input type="radio" name="fulfillmentMethod" value="Pickup from store" class="sr-only" onchange="toggleDeliveryFields(false)" checked />
-                    <div class="radio-indicator w-5 h-5 rounded-full border-2 border-brand-teal bg-brand-teal flex items-center justify-center mt-0.5 shrink-0 transition">
-                      <div class="w-2 h-2 rounded-full bg-slate-950"></div>
-                    </div>
-                    <div>
-                      <div class="flex items-center gap-1.5">
-                        <i class="ti ti-building-store text-brand-teal text-lg"></i>
-                        <h4 class="text-sm font-bold text-white">Store Pickup</h4>
-                      </div>
-                      <p class="text-xs text-slate-400 mt-1">
-                        Collect your package directly at the Sprint Boutique store. Free of charge.
-                      </p>
-                    </div>
-                  </label>
-
-                  <!-- Option: Delivery -->
-                  <label class="fulfillment-card relative flex items-start gap-3.5 p-4 rounded-2xl border-2 border-slate-800 bg-slate-950 cursor-pointer transition hover:border-brand-orange group">
-                    <input type="radio" name="fulfillmentMethod" value="Delivery" class="sr-only" onchange="toggleDeliveryFields(true)" />
-                    <div class="radio-indicator w-5 h-5 rounded-full border-2 border-slate-600 bg-transparent flex items-center justify-center mt-0.5 shrink-0 transition">
-                      <div class="w-2 h-2 rounded-full bg-slate-950"></div>
-                    </div>
-                    <div>
-                      <div class="flex items-center gap-1.5">
-                        <i class="ti ti-truck-delivery text-brand-orange text-lg"></i>
-                        <h4 class="text-sm font-bold text-white">Delivery to Location</h4>
-                      </div>
-                      <p class="text-xs text-slate-400 mt-1">
-                        Dispatched safely right to your home or office address.
-                      </p>
-                    </div>
-                  </label>
-
-                </div>
-
-                <!-- DYNAMIC LOCATION FIELD (Shown when delivery is chosen) -->
-                <div id="deliveryAddressSection" class="space-y-3 pt-2 hidden">
-                  <div class="space-y-1.5">
-                    <label for="deliveryAddress" class="block text-xs font-semibold uppercase tracking-wider text-slate-300">
-                      Your Delivery Address / City / Landmark <span class="text-brand-coral">*</span>
-                    </label>
-                    <div class="relative">
-                      <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
-                        <i class="ti ti-map-pin text-lg"></i>
-                      </div>
-                      <input type="text" id="deliveryAddress" name="deliveryAddress" placeholder="Street name, neighborhood, city or landmark"
-                        class="w-full pl-11 pr-4 py-3 bg-slate-950/90 border border-slate-700/80 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-orange text-sm" />
-                    </div>
-                  </div>
-                </div>
-
-                <!-- IMPORTANT LOCATION FEE NOTICE -->
-                <div class="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-start gap-3 text-amber-200 text-xs sm:text-sm leading-relaxed">
-                  <div class="p-1 rounded-lg bg-amber-500/20 text-amber-400 shrink-0 mt-0.5">
-                    <i class="ti ti-info-circle text-lg"></i>
-                  </div>
-                  <div>
-                    <span class="font-bold text-amber-300">Important Note on Delivery:</span>
-                    <span> Delivery fees may differ based on your specific location and destination distance. Our team will verify and communicate the exact fee before dispatch.</span>
-                  </div>
-                </div>
-
-              </div>
-
-              <!-- STEP 4: Additional Notes (Optional) -->
-              <div class="space-y-2">
-                <label for="orderNotes" class="block text-xs font-semibold uppercase tracking-wider text-slate-300">
-                  Special Notes / Custom Requirements (Optional)
+              <div class="sm:col-span-2">
+                <label for="clothingItem" class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1.5">
+                  Type of Clothing Item <span class="text-brand-orange">*</span>
                 </label>
-                <textarea id="orderNotes" name="orderNotes" rows="2" placeholder="Any specific color preferences, fabric notes, or preferred delivery timing..."
-                  class="w-full px-4 py-3 bg-slate-950/90 border border-slate-700/80 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-teal text-sm"></textarea>
+                <div class="relative">
+                  <i class="ti ti-hanger absolute left-3 top-3 text-gray-400 text-lg"></i>
+                  <input type="text" id="clothingItem" name="clothingItem" required placeholder="e.g. Vintage Shirt, T-Shirt, Hoodie, Dress..."
+                    class="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange" />
+                </div>
               </div>
 
-              <!-- Order Submit Action Button -->
-              <div class="pt-4">
-                <button type="submit" id="submitOrderBtn" class="w-full py-4 rounded-2xl btn-gradient text-white font-extrabold text-base tracking-wide shadow-xl shadow-brand-orange/20 flex items-center justify-center gap-3 group hover:opacity-95 transition transform hover:-translate-y-0.5">
-                  <i class="ti ti-shopping-cart-check text-xl"></i>
-                  <span>Submit Your Order</span>
-                  <i class="ti ti-sparkles text-lg group-hover:rotate-12 transition"></i>
-                </button>
-                <p class="text-center text-xs text-slate-400 mt-3 flex items-center justify-center gap-1.5">
-                  <i class="ti ti-shield-check text-brand-teal text-base"></i>
-                  <span>No upfront payment required to place your initial request.</span>
-                </p>
+              <div>
+                <label for="quantity" class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1.5">
+                  Quantity <span class="text-brand-orange">*</span>
+                </label>
+                <input type="number" id="quantity" name="quantity" min="1" value="1" required
+                  class="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-center font-bold text-gray-900 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange" />
               </div>
 
-            </form>
+            </div>
 
-          </div>
+            <!-- Fulfillment Preference -->
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">
+                Pickup or Delivery Preference <span class="text-brand-orange">*</span>
+              </label>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <label class="flex items-center gap-3 p-3.5 border border-gray-300 rounded-lg cursor-pointer hover:border-brand-orange transition">
+                  <input type="radio" name="fulfillment" value="Pickup from store" checked onchange="toggleDelivery(false)" class="text-brand-orange focus:ring-brand-orange" />
+                  <div class="text-sm">
+                    <div class="font-semibold text-gray-900 flex items-center gap-1.5">
+                      <i class="ti ti-building-store text-brand-orange"></i> Pickup from Store
+                    </div>
+                    <div class="text-xs text-gray-500">Pick up at Sprint Boutique</div>
+                  </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-3.5 border border-gray-300 rounded-lg cursor-pointer hover:border-brand-orange transition">
+                  <input type="radio" name="fulfillment" value="Delivery" onchange="toggleDelivery(true)" class="text-brand-orange focus:ring-brand-orange" />
+                  <div class="text-sm">
+                    <div class="font-semibold text-gray-900 flex items-center gap-1.5">
+                      <i class="ti ti-truck-delivery text-brand-orange"></i> Request Delivery
+                    </div>
+                    <div class="text-xs text-gray-500">Delivered to your address</div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Delivery Address (Conditional) -->
+            <div id="deliveryAddressField" class="hidden">
+              <label for="address" class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1.5">
+                Delivery Location / Address <span class="text-brand-orange">*</span>
+              </label>
+              <div class="relative">
+                <i class="ti ti-map-pin absolute left-3 top-3 text-gray-400 text-lg"></i>
+                <input type="text" id="address" name="address" placeholder="Your street address, area or landmark"
+                  class="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange" />
+              </div>
+            </div>
+
+            <!-- Location Fee Note -->
+            <div class="p-3.5 bg-brand-orange-light border border-orange-200 rounded-lg text-xs text-orange-900 flex items-start gap-2.5">
+              <i class="ti ti-info-circle text-base text-brand-orange shrink-0 mt-0.5"></i>
+              <span><strong>Note:</strong> Delivery fee may differ based on your location.</span>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="w-full bg-brand-orange hover:bg-brand-orange-dark text-white font-bold py-3.5 rounded-lg text-sm transition flex items-center justify-center gap-2">
+              <i class="ti ti-check text-lg"></i>
+              <span>Submit Order</span>
+            </button>
+
+          </form>
 
         </div>
 
@@ -740,125 +223,58 @@
   </main>
 
   <!-- FOOTER -->
-  <footer id="contact" class="relative bg-slate-950 border-t border-slate-800 text-slate-400 pt-16 pb-12 z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <footer class="border-t border-gray-200 bg-white py-10">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
       
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-slate-800/80">
-        
-        <!-- Brand Info -->
-        <div class="md:col-span-6 space-y-4">
-          <div class="flex items-center gap-3">
-            <img src="assets/logo.jpg" alt="Sprint Boutique" class="w-12 h-12 rounded-xl object-cover ring-1 ring-brand-coral/40" />
-            <div>
-              <h3 class="font-display font-bold text-xl text-white tracking-tight">SPRINT</h3>
-              <p class="text-xs text-slate-400 font-medium">LAUNDRY & BOUTIQUE</p>
-            </div>
-          </div>
-          <p class="text-sm text-slate-400 max-w-md leading-relaxed">
-            Your destination for fresh boutique style, premium fashion collections, and professional garment care. Enjoy exclusive discounts on our ongoing clothing sale.
-          </p>
-        </div>
-
-        <!-- Social Media Redirects -->
-        <div class="md:col-span-6 flex flex-col justify-center items-start md:items-end space-y-4">
-          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300">Connect With Us On Social Media</h4>
-          
-          <div class="flex flex-wrap gap-3">
-            <!-- Facebook Button -->
-            <a href="https://www.facebook.com/share/1BdUEvShiR/" target="_blank" rel="noopener noreferrer"
-               class="flex items-center gap-2.5 px-5 py-3 rounded-xl bg-slate-900 hover:bg-[#1877F2]/20 border border-slate-800 hover:border-[#1877F2] text-slate-200 hover:text-white transition group shadow-md">
-              <i class="ti ti-brand-facebook text-xl text-[#1877F2] group-hover:scale-110 transition"></i>
-              <span class="text-sm font-semibold">Sprint on Facebook</span>
-              <i class="ti ti-external-link text-xs text-slate-500 group-hover:text-white transition"></i>
-            </a>
-
-            <!-- Instagram Button -->
-            <a href="https://www.instagram.com/sprintlb?igsi=bzFyZ2p0bTNndG9p" target="_blank" rel="noopener noreferrer"
-               class="flex items-center gap-2.5 px-5 py-3 rounded-xl bg-slate-900 hover:bg-brand-pink/20 border border-slate-800 hover:border-brand-pink text-slate-200 hover:text-white transition group shadow-md">
-              <i class="ti ti-brand-instagram text-xl text-brand-pink group-hover:scale-110 transition"></i>
-              <span class="text-sm font-semibold">@sprintlb on Instagram</span>
-              <i class="ti ti-external-link text-xs text-slate-500 group-hover:text-white transition"></i>
-            </a>
-          </div>
-
-          <p class="text-xs text-slate-500">
-            Follow our pages for daily new arrivals, style guides, and laundry promotions.
-          </p>
-        </div>
-
+      <!-- Brand & Copy -->
+      <div class="text-center sm:text-left">
+        <div class="font-bold text-gray-900 text-base">Sprint Laundry & Boutique</div>
+        <div class="text-xs text-gray-500 mt-1">&copy; 2026 Sprint Laundry & Boutique. All rights reserved.</div>
       </div>
 
-      <!-- Bottom Bar -->
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-        <p>&copy; 2026 Sprint Laundry & Boutique. All rights reserved.</p>
-        <div class="flex items-center gap-4">
-          <a href="#hero" class="hover:text-slate-300 transition">Back to Top <i class="ti ti-arrow-up"></i></a>
-        </div>
+      <!-- Social Links -->
+      <div class="flex items-center gap-3">
+        <a href="https://www.facebook.com/share/1BdUEvShiR/" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-300 hover:border-brand-orange hover:text-brand-orange text-gray-700 text-sm font-medium transition">
+          <i class="ti ti-brand-facebook text-lg"></i>
+          <span>Facebook</span>
+        </a>
+
+        <a href="https://www.instagram.com/sprintlb?igsi=bzFyZ2p0bTNndG9p" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-300 hover:border-brand-orange hover:text-brand-orange text-gray-700 text-sm font-medium transition">
+          <i class="ti ti-brand-instagram text-lg"></i>
+          <span>Instagram</span>
+        </a>
       </div>
 
     </div>
   </footer>
 
-  <!-- ORDER SUCCESS MODAL -->
-  <div id="orderSuccessModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md hidden opacity-0 transition-opacity duration-300">
-    <div class="relative bg-slate-900 border border-slate-700 rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl space-y-6 text-center">
-      
-      <!-- Success Icon -->
-      <div class="w-16 h-16 rounded-2xl bg-brand-teal/20 text-brand-teal mx-auto flex items-center justify-center text-3xl shadow-lg ring-4 ring-brand-teal/10">
+  <!-- Simple Success Modal -->
+  <div id="successModal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-xl max-w-md w-full p-6 text-center space-y-4 shadow-xl border border-gray-100">
+      <div class="w-12 h-12 bg-orange-100 text-brand-orange rounded-full mx-auto flex items-center justify-center text-2xl">
         <i class="ti ti-circle-check"></i>
       </div>
 
-      <div class="space-y-2">
-        <h3 class="text-2xl font-display font-extrabold text-white">Order Received!</h3>
-        <p class="text-sm text-slate-300">
-          Thank you, <span id="modalCustomerName" class="font-bold text-white"></span>! Your Sprint Boutique sale order has been recorded.
-        </p>
+      <h3 class="text-xl font-bold text-gray-900">Order Received!</h3>
+      <p class="text-sm text-gray-600">
+        Thank you, <span id="modalName" class="font-semibold text-gray-900"></span>. We have received your order request.
+      </p>
+
+      <div class="bg-gray-50 border border-gray-200 rounded-lg p-3.5 text-left text-xs text-gray-700 space-y-1.5">
+        <div><strong>Item:</strong> <span id="modalItem"></span></div>
+        <div><strong>Quantity:</strong> <span id="modalQty"></span></div>
+        <div><strong>Fulfillment:</strong> <span id="modalFulfillment"></span></div>
+        <div id="modalAddressWrapper" class="hidden"><strong>Address:</strong> <span id="modalAddress"></span></div>
       </div>
 
-      <!-- Summary Details Box -->
-      <div class="bg-slate-950/80 border border-slate-800 rounded-2xl p-4 text-left space-y-2 text-xs text-slate-300">
-        <div class="flex justify-between pb-2 border-b border-slate-800">
-          <span class="text-slate-400">Order Reference:</span>
-          <span id="modalOrderRef" class="font-mono font-bold text-brand-orange"></span>
-        </div>
-        <div class="flex justify-between">
-          <span class="text-slate-400">Item & Qty:</span>
-          <span id="modalItemSummary" class="font-semibold text-white"></span>
-        </div>
-        <div class="flex justify-between">
-          <span class="text-slate-400">Fulfillment:</span>
-          <span id="modalFulfillment" class="font-semibold text-brand-teal"></span>
-        </div>
-        <div id="modalAddressRow" class="flex justify-between hidden">
-          <span class="text-slate-400">Address:</span>
-          <span id="modalAddress" class="font-semibold text-white max-w-[200px] truncate"></span>
-        </div>
-      </div>
-
-      <!-- Action Buttons -->
-      <div class="space-y-2.5 pt-2">
-        <button type="button" id="whatsappOrderBtn" class="w-full py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-slate-950 font-bold text-sm flex items-center justify-center gap-2 transition shadow-lg">
-          <i class="ti ti-brand-whatsapp text-xl"></i>
-          <span>Send Order via WhatsApp Directly</span>
-        </button>
-
-        <button type="button" onclick="closeOrderModal()" class="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold text-sm transition">
-          Close Window
-        </button>
-      </div>
-
+      <button type="button" onclick="closeModal()" class="w-full bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold py-2.5 rounded-lg text-sm transition">
+        Done
+      </button>
     </div>
   </div>
 
-  <!-- Toast Notification Container -->
-  <div id="toastNotification" class="fixed bottom-6 right-6 z-50 pointer-events-none transform translate-y-20 opacity-0 transition-all duration-300">
-    <div class="bg-slate-900 border border-slate-700 text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 text-sm">
-      <i id="toastIcon" class="ti ti-check text-brand-teal text-lg"></i>
-      <span id="toastMessage">Item selected!</span>
-    </div>
-  </div>
-
-  <!-- JavaScript -->
   <script src="app.js"></script>
 </body>
 </html>
