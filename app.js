@@ -2,9 +2,8 @@
  * Minimalist Order Script with WhatsApp Integration - Sprint Laundry & Boutique
  */
 
-// Optional: Set Sprint's official WhatsApp phone number with country code (e.g. "233XXXXXXXXX")
-// If left empty (""), WhatsApp opens with the prefilled message so the customer can pick Sprint or any contact.
-const SPRINT_WHATSAPP_PHONE = ""; 
+// Sprint's official WhatsApp phone number
+const SPRINT_WHATSAPP_PHONE = "2348126950374"; 
 
 function toggleDelivery(isDelivery) {
   const addressField = document.getElementById('deliveryAddressField');
