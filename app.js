@@ -42,11 +42,16 @@ function submitOrder(event) {
   message += `✉️ *Email:* ${email}\n\n`;
   message += `🛍️ *Clothing Item:* ${clothingItem}\n`;
   message += `🔢 *Quantity:* ${quantity}\n`;
-  message += `🚚 *Fulfillment:* ${fulfillment}\n`;
   
-  if (fulfillment === 'Delivery' && address) {
-    message += `📍 *Delivery Address:* ${address}\n`;
-    message += `_(Note: Delivery fee depends on location)_\n`;
+  if (fulfillment === 'Delivery') {
+    message += `🚚 *Fulfillment:* Delivery\n`;
+    if (address) {
+      message += `📍 *Delivery Address:* ${address}\n`;
+      message += `_(Note: Delivery fee depends on location)_\n`;
+    }
+  } else {
+    message += `🏪 *Fulfillment:* Store Pickup\n`;
+    message += `📍 *Pickup Location:* Plot CR 14 Ugwuji Road, Maryland, Enugu\n`;
   }
   
   message += `\nSent via Sprint Boutique Online Order Form.`;
