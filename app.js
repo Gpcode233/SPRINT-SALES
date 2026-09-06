@@ -1,6 +1,10 @@
 /**
- * Minimalist Order Script - Sprint Laundry & Boutique
+ * Minimalist Order Script with WhatsApp Integration - Sprint Laundry & Boutique
  */
+
+// Optional: Set Sprint's official WhatsApp phone number with country code (e.g. "233XXXXXXXXX")
+// If left empty (""), WhatsApp opens with the prefilled message so the customer can pick Sprint or any contact.
+const SPRINT_WHATSAPP_PHONE = ""; 
 
 function toggleDelivery(isDelivery) {
   const addressField = document.getElementById('deliveryAddressField');
@@ -32,7 +36,28 @@ function submitOrder(event) {
   const fulfillment = fulfillmentRadio ? fulfillmentRadio.value : 'Pickup from store';
   const address = document.getElementById('address')?.value.trim() || '';
 
-  // Fill modal
+  // Construct formatted WhatsApp message
+  let message = `*NEW ORDER - SPRINT BOUTIQUE SALE*\n\n`;
+  message += `👤 *Customer Name:* ${name}\n`;
+  message += `📞 *Phone:* ${phone}\n`;
+  message += `✉️ *Email:* ${email}\n\n`;
+  message += `🛍️ *Clothing Item:* ${clothingItem}\n`;
+  message += `🔢 *Quantity:* ${quantity}\n`;
+  message += `🚚 *Fulfillment:* ${fulfillment}\n`;
+  
+  if (fulfillment === 'Delivery' && address) {
+    message += `📍 *Delivery Address:* ${address}\n`;
+    message += `_(Note: Delivery fee depends on location)_\n`;
+  }
+  
+  message += `\nSent via Sprint Boutique Online Order Form.`;
+
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappUrl = SPRINT_WHATSAPP_PHONE 
+    ? `https://wa.me/${SPRINT_WHATSAPP_PHONE}?text=${encodedMessage}`
+    : `https://api.whatsapp.com/send?text=${encodedMessage}`;
+
+  // Update modal content
   document.getElementById('modalName').textContent = name;
   document.getElementById('modalItem').textContent = clothingItem;
   document.getElementById('modalQty').textContent = quantity;
@@ -46,12 +71,17 @@ function submitOrder(event) {
     addressWrapper.classList.add('hidden');
   }
 
+  // Set WhatsApp button link in modal
+  const modalLink = document.getElementById('modalWhatsAppLink');
+  if (modalLink) {
+    modalLink.href = whatsappUrl;
+  }
+
   // Show modal
   document.getElementById('successModal').classList.remove('hidden');
 
-  // Reset form
-  document.getElementById('orderForm').reset();
-  toggleDelivery(false);
+  // Attempt auto-opening WhatsApp in a new tab
+  window.open(whatsappUrl, '_blank');
 }
 
 function closeModal() {

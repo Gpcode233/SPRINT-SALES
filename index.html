@@ -41,19 +41,15 @@
 
   <!-- Minimal Header -->
   <header class="border-b border-gray-100 bg-white sticky top-0 z-30">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
       
-      <!-- Brand -->
+      <!-- Brand Logo with Rounded Corners -->
       <a href="#hero" class="flex items-center gap-3">
-        <img src="assets/logo.jpg" alt="Sprint Boutique Logo" class="w-10 h-10 rounded-lg object-cover border border-gray-200" />
-        <div>
-          <span class="font-bold text-base tracking-tight text-gray-900 block leading-tight">SPRINT</span>
-          <span class="text-[11px] text-gray-500 font-medium tracking-wide">LAUNDRY & BOUTIQUE</span>
-        </div>
+        <img src="assets/logo.jpg" alt="Sprint Laundry & Boutique Logo" class="h-12 w-auto max-w-[170px] sm:max-w-[200px] object-contain rounded-xl border border-gray-200 shadow-sm" />
       </a>
 
       <!-- Direct Action -->
-      <a href="#order" class="bg-brand-orange hover:bg-brand-orange-dark text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5">
+      <a href="#order" class="bg-brand-orange hover:bg-brand-orange-dark text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 shadow-sm">
         <i class="ti ti-shopping-bag text-base"></i>
         <span>Place Order</span>
       </a>
@@ -66,7 +62,7 @@
 
     <!-- HERO SECTION -->
     <section id="hero" class="py-16 md:py-24 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-orange-light text-brand-orange text-xs font-semibold mb-6 border border-orange-200">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-orange-light text-brand-orange text-xs font-semibold mb-6 border border-orange-200">
         <i class="ti ti-tag"></i> Special Clothing Sale Now Live
       </div>
 
@@ -76,7 +72,7 @@
       </h1>
 
       <p class="text-base sm:text-lg text-gray-600 max-w-xl mx-auto mb-8 leading-relaxed">
-        We are running a special sale on our premium boutique clothing items. Order online easily for store pickup or delivery right to your location.
+        We are running a special sale on our premium boutique clothing items. Order easily via WhatsApp for store pickup or delivery right to your location.
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -93,7 +89,7 @@
         
         <div class="text-center mb-8">
           <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Order Form</h2>
-          <p class="text-sm text-gray-500 mt-1">Please fill in your order details below</p>
+          <p class="text-sm text-gray-500 mt-1">Fill in your order details to send directly to Sprint on WhatsApp</p>
         </div>
 
         <div class="bg-white border border-gray-200 rounded-xl p-6 sm:p-8 shadow-sm">
@@ -208,9 +204,9 @@
             </div>
 
             <!-- Submit Button -->
-            <button type="submit" class="w-full bg-brand-orange hover:bg-brand-orange-dark text-white font-bold py-3.5 rounded-lg text-sm transition flex items-center justify-center gap-2">
-              <i class="ti ti-check text-lg"></i>
-              <span>Submit Order</span>
+            <button type="submit" class="w-full bg-brand-orange hover:bg-brand-orange-dark text-white font-bold py-3.5 rounded-lg text-sm transition flex items-center justify-center gap-2 shadow-sm">
+              <i class="ti ti-brand-whatsapp text-xl"></i>
+              <span>Submit Order via WhatsApp</span>
             </button>
 
           </form>
@@ -227,9 +223,12 @@
     <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
       
       <!-- Brand & Copy -->
-      <div class="text-center sm:text-left">
-        <div class="font-bold text-gray-900 text-base">Sprint Laundry & Boutique</div>
-        <div class="text-xs text-gray-500 mt-1">&copy; 2026 Sprint Laundry & Boutique. All rights reserved.</div>
+      <div class="text-center sm:text-left flex flex-col sm:flex-row items-center gap-4">
+        <img src="assets/logo.jpg" alt="Sprint Logo" class="h-9 w-auto object-contain rounded-lg border border-gray-200" />
+        <div>
+          <div class="font-bold text-gray-900 text-sm">Sprint Laundry & Boutique</div>
+          <div class="text-xs text-gray-500 mt-0.5">&copy; 2026 Sprint Laundry & Boutique. All rights reserved.</div>
+        </div>
       </div>
 
       <!-- Social Links -->
@@ -250,16 +249,16 @@
     </div>
   </footer>
 
-  <!-- Simple Success Modal -->
+  <!-- WhatsApp Confirmation Modal -->
   <div id="successModal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 hidden">
     <div class="bg-white rounded-xl max-w-md w-full p-6 text-center space-y-4 shadow-xl border border-gray-100">
       <div class="w-12 h-12 bg-orange-100 text-brand-orange rounded-full mx-auto flex items-center justify-center text-2xl">
-        <i class="ti ti-circle-check"></i>
+        <i class="ti ti-brand-whatsapp"></i>
       </div>
 
-      <h3 class="text-xl font-bold text-gray-900">Order Received!</h3>
+      <h3 class="text-xl font-bold text-gray-900">Order Formatted!</h3>
       <p class="text-sm text-gray-600">
-        Thank you, <span id="modalName" class="font-semibold text-gray-900"></span>. We have received your order request.
+        Thank you, <span id="modalName" class="font-semibold text-gray-900"></span>. Click below if WhatsApp did not open automatically.
       </p>
 
       <div class="bg-gray-50 border border-gray-200 rounded-lg p-3.5 text-left text-xs text-gray-700 space-y-1.5">
@@ -269,9 +268,15 @@
         <div id="modalAddressWrapper" class="hidden"><strong>Address:</strong> <span id="modalAddress"></span></div>
       </div>
 
-      <button type="button" onclick="closeModal()" class="w-full bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold py-2.5 rounded-lg text-sm transition">
-        Done
-      </button>
+      <div class="space-y-2">
+        <a id="modalWhatsAppLink" href="#" target="_blank" class="w-full bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold py-2.5 rounded-lg text-sm transition flex items-center justify-center gap-2">
+          <i class="ti ti-brand-whatsapp text-lg"></i>
+          <span>Open WhatsApp & Send</span>
+        </a>
+        <button type="button" onclick="closeModal()" class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 rounded-lg text-xs transition">
+          Close
+        </button>
+      </div>
     </div>
   </div>
 
